@@ -32,6 +32,11 @@ instance.interceptors.response.use((response) => {
 	}
 	return response;
 },  (error) => {
+    if(error.response.status === 401){
+		console.log("重定向");
+		window.location.href = '/login'
+		// history.push('/login')
+	}
 	// Do something with response error
 	return Promise.reject(error);
 });

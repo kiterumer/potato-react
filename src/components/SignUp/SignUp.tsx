@@ -17,7 +17,7 @@ class SignUp extends React.Component<any,ISignUpState>{
 		this.state = {
 			account:'',
 			password:'',
-			passworConformation:''
+			passwordConformation:''
 		}
 	}
 
