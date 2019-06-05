@@ -12,6 +12,7 @@ interface ISignUpState{
 }
 
 class SignUp extends React.Component<any,ISignUpState>{
+	// 第一个参数声明props类型，第二个参数声明state类型
 	constructor(props){
 		super(props)
 		this.state = {
@@ -32,7 +33,7 @@ class SignUp extends React.Component<any,ISignUpState>{
 	onChangePasswordConformation = (e) => {
 		this.setState({ passwordConformation: e.target.value });
 	}
-
+   
 	submit = async () => {
 		const { account,password,passwordConformation } = this.state;
 		try{

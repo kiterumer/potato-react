@@ -12,8 +12,9 @@ const instance = axios.create({
 	}
 });
 
-// Add a request interceptor
+// Add a request interceptor  请求拦截器，添加x-token
 instance.interceptors.request.use((config) => {
+	// 从本地localStorage中获取x-token
 	const xToken = localStorage.getItem('x-token')
 	if(xToken){
 		config.headers['Authorization'] = `Bearer ${xToken}`
@@ -27,13 +28,14 @@ instance.interceptors.request.use((config) => {
 // Add a response interceptor
 instance.interceptors.response.use((response) => {
 	// Do something with response data
+	// 获取响应的x-token更新本地的x-token
 	if(response.headers['x-token']){
 		localStorage.setItem('x-token',response.headers['x-token'])
 	}
 	return response;
 },  (error) => {
+	// 全局响应拦截，如果返回401就跳转到登录界面
     if(error.response.status === 401){
-		// console.log("重定向");
 		// window.location.href = '/login'
 		history.push('/login')
 	}

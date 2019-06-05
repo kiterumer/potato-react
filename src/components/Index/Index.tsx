@@ -17,7 +17,7 @@ class Index extends React.Component<IRouter,IIndexState> {
 			user:{}
 		}
 	}
-
+  // 获取用户个人信息
 	async componentWillMount(){
 		await this.getMe()
 	}
