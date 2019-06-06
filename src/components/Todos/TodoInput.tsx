@@ -11,7 +11,8 @@ interface ITodoInputProps {
 
 class TodoInput extends React.Component<ITodoInputProps,ITodoInputState> {
 	constructor(props){
-		super(props)
+        super(props)
+        console.log(props)
 		this.state = {
 			description: ''
 		}

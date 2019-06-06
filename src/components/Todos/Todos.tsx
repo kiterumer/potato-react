@@ -17,6 +17,7 @@ class Todos extends React.Component<any,ITodosState> {
 	addTodo = async (params:any)=>{
         const {todos} = this.state
 		try{
+            console.log(params) // 用户输入的字段
 			const response = await axios.post('todos',params)
             console.log(response.data);
             this.setState({todos:[response.data.resource,...todos]})

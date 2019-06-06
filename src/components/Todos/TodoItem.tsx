@@ -11,7 +11,7 @@ interface ITodoItemProps {
 class TodoItem extends React.Component<ITodoItemProps> {
 	constructor(props){
         super(props)
-        console.log(props)
+        // console.log(props)  // 从Todos组件传递下来的对象参数
 	}
 
 	update = (params:any) => {
