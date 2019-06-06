@@ -48,17 +48,17 @@ class Index extends React.Component<IRouter,IIndexState> {
 		return (
 			<div className="Index" id="Index">
 				<header>
-						<span className="logo">LOGO</span>
-						<Dropdown overlay={menu}>
-							<span>
-								{this.state.user && this.state.user.account}
-								<Icon type="down" style={{ marginLeft: 8}}/>
-							</span>
-						</Dropdown>
-					</header>
-					<main>
-						<Todos/>
-					</main>
+					<span className="logo">LOGO</span>
+					<Dropdown overlay={menu}>
+						<span>
+							{this.state.user && this.state.user.account}
+							<Icon type="down" style={{ marginLeft: 8}}/>
+						</span>
+					</Dropdown>
+				</header>
+				<main>
+					<Todos/>
+				</main>
 			</div>
 		);
 	}
