@@ -22,15 +22,9 @@ class Index extends React.Component<IRouter,IIndexState> {
 		await this.getMe()
 	}
 
-	getMe = async () => {
-		try{
-			const response = await axios.get('me')
-			this.setState({user: response.data})
-		}catch (e) {
-			// if(e.response.status === 401){
-			// 	this.props.history.push('/login')
-			// }
-		}
+	getMe = async () => {	
+			const response = await axios.get('me') //获取异步结果
+			this.setState({user: response.data})  //将获取的结果赋值给state状态中
 	}
 
 	logout = ()=>{
