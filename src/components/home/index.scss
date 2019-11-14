@@ -1,0 +1,52 @@
+#home{
+  max-width: 960px;
+  padding: 16px;
+  width: 100%;
+  margin: 0 auto;
+  header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    h1{
+      font-size: 16px;
+      font-weight: 450;
+      margin:0;
+    }
+    .userInfo{
+      margin: 0 16px 0 auto;
+      .userName{
+        margin-right: .3em;
+      }
+    }
+    .logo{
+      height: 35px;
+      margin-left: 16px;
+    }
+    border-bottom:1px solid #e1e1e1;
+    margin-bottom: 20px;
+  }
+  main{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    .content{
+      background: #fff;
+      box-shadow: 0 2px 0 rgba(225,225,225,.2);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: calc(50% - 8px);
+    }
+  }
+}
+
+@media (max-width:760px){
+  #home{
+    main{
+      flex-direction: column;
+      .content{
+        width: 100%;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

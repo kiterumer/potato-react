@@ -1,0 +1,415 @@
+#statistics {
+  width: 100%;
+  margin-top: 22px;
+  min-height: 150px;
+  flex-direction: column;
+  .graph {
+    display: flex;
+    li {
+      flex: 1;
+      display: flex;
+      border: 1px solid #e4e4e4;
+      cursor: pointer;
+      min-height: 90px;
+      background: #fff;
+      text-align: left;
+      font-size: 14px;
+      color: #666;
+      position: relative;
+      box-shadow: 0 2px 0 rgba(225,225,225,.2);
+      &.active{
+        background-color: #F4F4F4;
+      }
+      &:not(:first-child) {
+        margin-left: -1px;
+      }
+      .polygon,.bar_chart {
+        width: 100%;
+        height: 60px;
+        align-self: flex-end;
+        svg {
+          &:not(:root) {
+            overflow: hidden;
+          }
+        }
+      }
+      .desc {
+        position: absolute;
+        padding: 10px 10px 0;
+        display: flex;
+        flex-direction: column;
+        .title {
+          display: block;
+          font-size: 14px;
+          color: #666;
+        }
+        .subtitle {
+          font-size: 12px;
+          line-height: 12px;
+          color: #999;
+          padding: 6px 0 2px;
+        }
+        .quantity {
+          font-size: 30px;
+          color: #666;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+  .todo_history{
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid #DDD;
+    box-shadow: 0 2px 0 rgba(225,225,225,.2);
+    padding: 16px;
+    .daily_todos{
+      font-size: 14px;
+      border: 1px solid #DDD;
+      border-radius: 3px;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+      margin-bottom: .6em;
+      padding: .9em;
+      display: flex;
+      .title{
+        display: flex;
+        flex-direction: column;
+        color: #888;
+        width: 30%;
+        .date{
+          .date_time{
+            color: #222;
+            margin-right: 8px;
+          }
+        }
+        .desc{
+          line-height: 1.5;
+          margin-top: 8px;
+        }
+      }
+    }
+    .itemlist{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      .item{
+        padding: 8px 66px 8px 8px;
+        position: relative;
+
+        .action_wrapper{
+          display: none;
+          position: absolute;
+          right: 0;
+          span{
+            margin-right: 8px;
+            cursor: pointer;
+          }
+        }
+        &:hover{
+          background: #f4f4f4;
+          .action_wrapper{
+            display: inline;
+          }
+        }
+        .date_time{
+          color:#888;
+          margin-right: 12px;
+        }
+      }
+    }
+    .Pagination_wrapper{
+      display: flex;
+      margin: 32px 0 16px;
+      .tips{
+        color: #888;
+        margin-left: auto;
+      }
+    }
+  }
+  .tomato_history{
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid #DDD;
+    box-shadow: 0 2px 0 rgba(225,225,225,.2);
+    padding: 16px;
+    .ant-tabs-bar {
+      .ant-btn{
+         margin-right: 16px;
+      }
+    }
+    .add_tomato_pane{
+      background: #F9F9F9;
+      border: 1px solid #DDD;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+      padding: 1em;
+      border-radius: 3px;
+      margin-bottom: .6em;
+      font-size: 14px;
+      .ant-form-item-label {
+        width: 5em;
+      }
+      .ant-form-item-children{
+        button{
+          margin-right: 1em;
+        }
+      }
+    }
+    .daily_tomatoes{
+      font-size: 14px;
+      border: 1px solid #DDD;
+      border-radius: 3px;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+      margin-bottom: .6em;
+      padding: .9em;
+      display: flex;
+      .title{
+        display: flex;
+        flex-direction: column;
+        color: #888;
+        width: 30%;
+        .date{
+          .date_time{
+            color: #222;
+            margin-right: 8px;
+          }
+        }
+        .daily_statistic{
+          line-height: 1.5;
+          margin-top: 8px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .itemlist{
+        width:70%;
+      }
+    }
+    .itemlist{
+      display: flex;
+      flex-direction: column;
+      .item{
+        padding: 8px 72px 8px 8px;
+        position: relative;
+        display:flex;
+        align-items: center;
+        .day_time{
+          flex-shrink: 0;
+          width: 108px;
+        }
+        span{
+          min-height: 32px;
+          line-height: 32px;
+          p{
+            display: none;
+            color: #ff7676;
+            &.active{
+              display: inline;
+            }
+          }
+        }
+        .ant-input{
+          flex:1;
+        }
+        .action_wrapper{
+          display: none;
+          position: absolute;
+          right: 0;
+          span{
+            margin-right: 8px;
+            cursor: pointer;
+          }
+        }
+        &:hover{
+          background: #f4f4f4;
+          .action_wrapper{
+            display: inline;
+          }
+        }
+        .date_time{
+          color:#888;
+          margin:0 12px;
+        }
+      }
+    }
+    .Pagination_wrapper{
+      display: flex;
+      margin: 32px 0 16px;
+      .tips{
+        color: #888;
+        margin-left: auto;
+      }
+    }
+  }
+  .monthly_history{
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid #DDD;
+    box-shadow: 0 2px 0 rgba(225,225,225,.2);
+    padding: 16px;
+    .monthly_template{
+      .month_action{
+        margin: 16px 4px;
+        span{
+          margin: 4px;
+        }
+      }
+      .key_metrics{
+        display: flex;
+        border: 1px solid #DDD;
+        border-radius: 3px;
+        border-bottom: none;
+        .metrics_item{
+          flex:1;
+          padding: .7em 0;
+          text-align: center;
+
+          font-size: 16px;
+          vertical-align: middle;
+            &:not(:last-child){
+              border-right: 1px solid #DDD;
+            }
+          strong{
+            font-size: 26px;
+            margin-right: .5em;
+          }
+          .rise{
+            color: #3D9400;
+          }
+          .reduce{
+            color: red;
+          }
+        }
+      }
+      .month_chart{
+        border:  1px solid #DDD;
+        text-align: center;
+        padding: 16px;
+        circle{
+          stroke: rgba(200,40,41,.8);
+          fill: #fff;
+          stroke-width: 2px;
+          &:hover{
+            cursor: pointer;
+            stroke: rgba(200,40,41,.8);
+            stroke-width: 3px;
+          }
+        }
+        text{
+          fill: rgba(200,40,41,.6);
+        }
+        path{
+          stroke: rgba(200,40,41,.6);
+          stroke-width: 2.5px;
+          fill: none;
+        }
+        rect{
+          fill: #F4F4F4;
+          stroke: #DDD;
+          stroke-width: .5;
+        }
+      }
+    }
+  }
+}
+.daily_tips{
+  .ant-tooltip-arrow{
+    border-top-color: rgba(200,40,41,.8);
+
+  }
+  .ant-tooltip-inner{
+    background-color:rgba(200,40,41,.8);
+  }
+}
+@media (max-width: 760px) {
+  #statistics {
+    .graph {
+      flex-direction: column;
+      li {
+        width: 100%;
+        &:not(:first-child) {
+          margin-top: -1px;
+          margin-left: 0;
+        }
+        .polygon,.bar_chart{
+          svg{
+            width: 100%;
+          }
+        }
+      }
+    }
+
+  }
+}
+@media (max-width:450px){
+  #statistics {
+    .todo_history{
+      .daily_todos{
+        flex-direction: column;
+        .title{
+          flex-direction: row;
+          width: 100%;
+          border-bottom: 1px solid #DDD;
+          padding-bottom: 8px;
+          font-size: 12px;
+          align-items: center;
+          .date{
+            .date_time{
+              font-size: 14px;
+            }
+          }
+          .desc{
+            margin-top:0;
+            margin-left: 8px;
+            line-height: 1;
+          }
+        }
+      }
+    }
+    .tomato_history{
+      .daily_tomatoes{
+        flex-direction: column;
+        .title{
+          flex-direction: row;
+          width: 100%;
+          border-bottom: 1px solid #DDD;
+          padding-bottom: 8px;
+          font-size: 12px;
+          align-items: center;
+          flex:0;
+          .date{
+            .date_time{
+              font-size: 14px;
+            }
+          }
+          .daily_statistic{
+            margin-top:0;
+            margin-left: 8px;
+            line-height: 1;
+            flex-direction: row;
+            span{
+              &:first-child{
+                margin-right: 4px;
+              }
+            }
+          }
+        }
+        .itemlist{
+          width: 100%;
+          .item{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .monthly_history{
+      .monthly_tomato{
+        .key_metrics{
+          flex-direction: column;
+          .metrics_item{
+            border-right: none!important;
+          }
+        }
+      }
+    }
+  }
+}
